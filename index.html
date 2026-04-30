@@ -77,9 +77,12 @@ function check() {
 
     let a = document.getElementById("answer").value.toLowerCase().trim();
 
-    if (a === "oheň") {
+    if (a === "oheň" || a === "ohen") {
 
-        window.location.replace("https://raw.githubusercontent.com/viktormicanAdventura/test2/main/Mapa-1.png");
+        document.getElementById("box").innerHTML = `
+            <h2>✅ Správně!</h2>
+            <img src="https://raw.githubusercontent.com/viktormicanAdventura/test2/main/Mapa-1.png" style="max-width:100%; border-radius:10px;">
+        `;
 
     } else {
 
