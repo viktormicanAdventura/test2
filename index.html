@@ -79,9 +79,20 @@ function check() {
 
     if (a === "oheň" || a === "ohen") {
 
+        // ODESLÁNÍ DO GOOGLE FORM
+        fetch("https://docs.google.com/forms/d/e/FORM_ID/formResponse", {
+            method: "POST",
+            mode: "no-cors",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body: "entry.123456789=Spravne"
+        });
+
+        // ZOBRAZENÍ OBRÁZKU
         document.getElementById("box").innerHTML = `
             <h2>✅ Správně!</h2>
-            <img src="https://raw.githubusercontent.com/viktormicanAdventura/test2/main/Mapa-1.png" style="max-width:100%; border-radius:10px;">
+            <img src="https://raw.githubusercontent.com/viktormicanAdventura/test2/main/Mapa-1.png" style="max-width:100%">
         `;
 
     } else {
@@ -89,16 +100,7 @@ function check() {
         document.getElementById("error").innerText = "Špatně, zkus to znovu.";
 
     }
-
 }
-
-
-function enter(e){
-
-    if(e.key === "Enter") check();
-
-}
-
 </script>
 
 
